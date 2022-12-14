@@ -170,25 +170,6 @@ while (entrada != "ESC") {
 }
 entrada = prompt("Ingresa tu medio de pago");
 
-/* let suma = operaciones (suma)
-suma = prompt ("Gracias por tu compra"); */
-/* function operaciones (operacion){
-    if (operacion  >10000){
-        return "Envio gratis"
-    }
-    else if (operacion  < 10000)
-    return "El costo del envio es"
-} */
-
-
-
-/* function mayorQue (n){
-    return m => m > n;
-}
-
-let mayorQueDiezMil = mayorQue (10000);
- */
-
 
 //Método Includes()  retorna un booleano si lo encuentra. 
 
