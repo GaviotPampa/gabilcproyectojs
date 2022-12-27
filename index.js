@@ -1,6 +1,97 @@
+/*** Contructor del Molde***/
 
+class Producto {
+    constructor(id, nombre, marca, precio, img, cantidad) {
+        this.id = id
+        this.nombre = nombre;
+        this.marca = marca;
+        this.precio = precio;
+        this.img = img;
+        this.cantidad = cantidad;
+
+    }
+
+    vender() {
+        this.cantidad -= 1;//this.cantidad = this.cantidad -1;
+    }
+}
+
+///creación de objetos perfumes
+
+const perfumeGivenchy = new Producto(1, "Perfume Givenchy", "Givenchy", 25000, "img/beauty-parfumlinterditrojogivenchy.jpg");
+const perfumeArmani = new Producto(2, "Perfume Acqua", "Giorgio Armaani", 27000, "img/parfumacquaverdedigioia.jpg");
+const perfumeKenzo = new Producto(3, "Perfume Kenzo", "Kenzo", 28900, "img/flower-by-kenzo-poppy-bouquet.jpg");
+const perfumeCalvinKlein = new Producto(4, "Perfume Calvin Klein", "Calvin Klein", 31000,"img/beauty-parfumbeigecalvin.jpg");
+
+///creación de objetos jabones
+
+const jabonIgoris = new Producto(8,"Jabón Igoris", "Igoris", 350, "img/jabones-artesanales-igoriss.jpg");
+const jabonRosa = new Producto(5, "Jabóm Roses","Igoris", 350, "img/jabonnaturalrosa.jpg");
+const jabonArtesanal = new Producto(6, "Set de Jabones Pin", "Igoris", 650,"img/jabonesartesanales.jpg");
+const jabonMiel = new Producto(7, "Jabón de Miel de Abejas", "Igoris", 370,"img/jabonesnaturalesconmiel.jpg");
+const jabonOlivas = new Producto(9, "Jabón de Olivas", "Igoris", "370","img/jabondeolivas.jpg");
+const jabonRomero = new Producto(10, "Jabóm de Romero", "Igoris", 370,"img/jabon-de-romero.jpg"); 
+
+///array con los productos del catalago
+
+const productos = ["Perfume Givenchy", 
+"Perfume Acqua", 
+"Perfume Kenzo",
+"Perfume Calvin Klein",
+"Jabón Igoris",
+"Jabóm Roses",
+"Set de Jabones Pin",
+"Jabón de Miel de Abejas", 
+"Jabón de Olivas", 
+ "Jabóm de Romero"]
+
+let filtrados= productos.filter (items => items.includes ("i"));
+ console.log(filtrados);
+///array carrito
+
+let carrito = [];
+
+const contenedorProductos = document.getElementById("contenedorProductos");
+
+const mostrarProductos = () => {
+    productos.forEach(producto => {
+        const card = document.createElement("div");
+      /*   card.classList.add("col-x1-3", "col-md-6", "col-xs-12"); */
+        card.innerHTML =
+            `
+             <div class="card">
+                  
+                <div class="img-container">
+                 <img class="fotos-cuadradas11 zoom" src="${producto.img}" alt=""${producto.marca}"">
+                 <span class="promo">15% de descuento</span>
+                </div>
+             
+                <div class="info-container">
+                 <p>${producto.nombre}</p>
+                 <strong>${producto.precio}</strong>
+                 <button class="add-cart">Añadir al carrito</button>
+                </div>
+             </div>
+            `
+        contenedorProductos.appendChild(card);
+
+        
+
+    })
+}
+
+mostrarProductos();
+
+/* 
+const productos = [];
+productos.push(new Producto("esmalte", "Be", "celete", 329.99, 15));
+productos.push(new Producto("esmalte", "Be", "rosa", 329.99, 10));
+productos.push(new Producto("perfume", "Giorgio Armani", "Acqua", 27500, 5));
+productos.push(new Producto("jabon", "Be Nature", "oliva", 500, 20));
+
+console.log(productos); */
 ///FOR
-let comenzar = alert("Hola. Queres iniciar sesion?");
+/* let comenzar = alert("Hola. Queres iniciar sesion?");
 
 function bienvenida(comenzar) {
 
@@ -23,6 +114,7 @@ for (let i = 0; i < 3; i++) {
     }
     else if (passwordUsuario != passwordCorrecto) {
         alert("Contraseña Incorrecta. Volvé a ingresar tu contraseña");
+        passwordUsuario = parseInt(prompt("Ingrese su contraseña: 12345"));
         break;
     }
     else {
@@ -30,12 +122,12 @@ for (let i = 0; i < 3; i++) {
         break;
     }
 
-}
-
+} 
+ */
 
 //while - switch
 
-function saludar(nameUsuario) {
+/* function saludar(nameUsuario) {
 
     let mensaje = "Vamos por tus productos" + " " + nameUsuario;
     alert(mensaje);
@@ -43,8 +135,8 @@ function saludar(nameUsuario) {
 
 saludar(nameUsuario)
 
-//Preentrega 2
-
+///***Preentrega 2***///
+/* 
 let productoSeleccionado = prompt("Ingresa el producto que queres buscar: \n esmalte  \n  perfume  \n  jabon  \n esmalteMetalizado \n  perfumeBvlgari");
 
 function seleccionarProducto() {
@@ -69,50 +161,26 @@ else {
     window.alert('Cancelar');
 }
 
-/*** Contructor del Molde***/
-
-class Producto {
-    constructor(nombre, marca, caracteristica, precio, cantidad) {
-        this.nombre = nombre;
-        this.marca = marca;
-        this.caracteristica = caracteristica;
-        this.precio = precio;
-        this.cantidad = cantidad;
-
-    }
-
-    vender() {
-        this.cantidad -= 1;//this.cantidad = this.cantidad -1;
-    }
-}
-
-const productos = [];
-productos.push(new Producto("esmalte", "Be", "celete", 329.99, 15));
-productos.push(new Producto("esmalte", "Be", "rosa", 329.99, 10));
-productos.push(new Producto("perfume", "Giorgio Armani", "Acqua", 27500, 5));
-productos.push(new Producto("jabon", "Be Nature", "oliva", 500, 20));
-
-console.log(productos);
 
 for (const arrayProductos of productos) {
     console.log("Productos en Stock: ");
     console.log(arrayProductos);
-}
-
+} */
+ 
 
 //metodo push
-
+/* 
 let productosNuevos = ["Esmalte", "Perfume", "Jabón"];
 console.log("Array nuevos productos");
 console.log(productosNuevos.join(" "));
 
 console.log("Agrego perfume : ");
 productosNuevos.push(" Perfume-Bvlgary");
-console.log(productosNuevos.join(" "));
+console.log(productosNuevos.join(" ")); */
 
 //Metodo unshift(). 
 
-console.log("Agrego Esmalte metalizado : ");
+/* console.log("Agrego Esmalte metalizado : ");
 productosNuevos.unshift("Esmalte Metalizado ");
 console.log(productosNuevos);
 
@@ -132,11 +200,12 @@ if (identificador) {
     alert("Producto agregado")
 } else {
     alert("Producto No encontrado")
-}
+    nombre = prompt("Ingrese el nombre del producto a agregar")
+} */
 
 
 //** método REDUCE**/
-
+/* 
 const totalCarrito = productos.reduce((acumulador, productosNuevos) => acumulador + productosNuevos.precio, 0);
 
 alert("Total del Carrito:");
@@ -193,6 +262,18 @@ if (cantidad === 0) {
 else if (cantidad >= 1) {
     console.log('Hay Stock');
 
+} */
+
+//**tercer preentrega**/
+
+/* const button = document.querySelectorAll("button");
+
+function ejecutar() {
+
 }
+button.addEventListener("click", () => {
+    alert("Tu producto está en tu carrito");
+
+}) */
 
 

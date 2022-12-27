@@ -400,5 +400,10 @@ hr {
     opacity: 0.7;
     background: #aa6fe6;
     border-radius: 50px;
-    box-shadow: 2px 2px 3px #999; }
+    box-shadow: 2px 2px 3px #999;
+ }
   
+    button.blue {
+        background-color: blueviolet;
+
+    }
