@@ -34,19 +34,10 @@ const jabonRomero = new Producto(10, "Jabóm de Romero", "Igoris", 370,"img/jabo
 
 ///array con los productos del catalago
 
-const productos = ["Perfume Givenchy", 
-"Perfume Acqua", 
-"Perfume Kenzo",
-"Perfume Calvin Klein",
-"Jabón Igoris",
-"Jabóm Roses",
-"Set de Jabones Pin",
-"Jabón de Miel de Abejas", 
-"Jabón de Olivas", 
- "Jabóm de Romero"]
+const productos = [perfumeGivenchy, perfumeArmani, perfumeKenzo,
+    perfumeCalvinKlein, jabonIgoris, jabonRosa, jabonArtesanal,
+    jabonMiel, jabonOlivas, jabonRomero];
 
-let filtrados= productos.filter (items => items.includes ("i"));
- console.log(filtrados);
 ///array carrito
 
 let carrito = [];
@@ -56,11 +47,10 @@ const contenedorProductos = document.getElementById("contenedorProductos");
 const mostrarProductos = () => {
     productos.forEach(producto => {
         const card = document.createElement("div");
-      /*   card.classList.add("col-x1-3", "col-md-6", "col-xs-12"); */
+     
         card.innerHTML =
             `
              <div class="card">
-                  
                 <div class="img-container">
                  <img class="fotos-cuadradas11 zoom" src="${producto.img}" alt=""${producto.marca}"">
                  <span class="promo">15% de descuento</span>
@@ -81,6 +71,21 @@ const mostrarProductos = () => {
 }
 
 mostrarProductos();
+
+// función agregar al carrito: 
+
+const agregarAlCarrito = (id) => {
+    const productoEnCarrito = carrito.find(producto => producto.id === id);
+    if(productoEnCarrito) {
+        productoEnCarrito.cantidad++;
+    } else {
+        const producto = productos.find(producto => producto.id === id);
+        carrito.push(producto);
+    }
+    //Trabajamos con el localStorage: 
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    calcularTotal();
+}
 
 /* 
 const productos = [];
