@@ -72,6 +72,36 @@ const mostrarProductos = () => {
 
 mostrarProductos();
 
+
+const contenedorProductosDos = document.getElementById("contenedorProductos");
+
+const mostrarProductosDos = () => {
+    productos.forEach(producto => {
+        const card = document.createElement("div");
+     
+        card.innerHTML =
+            `
+             <div class="card">
+                <div class="img-container">
+                 <img class="fotos-cuadradas11 zoom" src="${producto.img}" alt=""${producto.marca}"">
+                </div>
+             
+                <div class="info-container">
+                 <p>${producto.nombre}</p>
+                 <strong>${producto.precio}</strong>
+                 <button class="add-cart">Añadir al carrito</button>
+                </div>
+             </div>
+            `
+        contenedorProductosDos.appendChild(card);
+
+        
+
+    })
+}
+
+mostrarProductos();
+
 // función agregar al carrito: 
 
 const agregarAlCarrito = (id) => {
@@ -87,7 +117,7 @@ const agregarAlCarrito = (id) => {
     calcularTotal();
 }
 
-/* 
+/*
 const productos = [];
 productos.push(new Producto("esmalte", "Be", "celete", 329.99, 15));
 productos.push(new Producto("esmalte", "Be", "rosa", 329.99, 10));
@@ -280,5 +310,6 @@ button.addEventListener("click", () => {
     alert("Tu producto está en tu carrito");
 
 }) */
+
 
 
